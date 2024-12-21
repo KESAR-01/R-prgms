@@ -1,0 +1,12 @@
+#Loadthemarkovchainpackage 
+library(markovchain) 
+#DenethetransitionmatrixoftheMarkovchain 
+#Replacethiswithyourowntransitionmatrix 
+P<-matrix(c(0.7,0.3,0.2,0.8),nrow=2,byrow=TRUE) 
+#Createamarkovchainobject 
+mc<-new("markovchain",states=c("State1","State2"),transitionMatrix=P) 
+#Findthestationarydistribution 
+stationary_distribution<-steadyStates(mc) 
+#Printthestationarydistribution 
+cat("StationaryDistribution:") 
+print(stationary_distribution)

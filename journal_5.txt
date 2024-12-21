@@ -1,0 +1,21 @@
+#Createasamplevector 
+values<-c(1,2,3,4,5) 
+#Calculatecumulativesum 
+cumulative_sum<-cumsum(values) 
+cat("CumulativeSum:",cumulative_sum,"\n") 
+#Calculatecumulativeproduct 
+cumulative_product<-cumprod(values) 
+cat("CumulativeProduct:",cumulative_product,"\n") 
+#Findtheminimumandmaximumvalues 
+min_value<-min(values) 
+max_value<-max(values) 
+cat("MinimumValue:",min_value,"\n") 
+cat("MaximumValue:",max_value,"\n")
+#Basiccalculusoperations #Deneafunction 
+f=expression(x^2+3*x)
+ D(f,'x')
+ f<-function(x) x^2+3*x
+ integrate(f,0,1)
+ integrate(f, lower=0, upper=1)
+ 
+

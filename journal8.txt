@@ -1,0 +1,19 @@
+#Createasampledataset 
+data<-c(23,45,56,32,67,89,55,43,78,36,49,60,70) 
+#Createabasiclinechart 
+plot(data,type="l",col="blue",xlab="X-axis",ylab="Y-axis",main="LineChart") 
+#Createahistogram 
+hist(data,col="lightblue",xlab="Value",ylab="Frequency",main="Histogram") 
+#Createapiechart 
+pie_data<-c(20,30,40,10) 
+pie(pie_data,labels=c("A","B","C","D"),col=rainbow(length(pie_data)),main="Pie Chart") 
+#Createaboxplot 
+boxplot(data,col="lightgreen",xlab="Value",main="BoxPlot") 
+#Createascatterplot 
+x<-c(1,2,3,4,5,6,7,8,9,10) 
+y<-c(2,4,5,7,8,10,11,14,15,17) 
+plot(x,y,col="red",xlab="X-axis",ylab="Y-axis",main="Scatterplot") 
+#Addaregressionlinetothescatterplot 
+abline(lm(y~x),col="blue") 
+#Createalegendforthescatterplot
+legend("topleft",legend="RegressionLine",col="blue",lty=1)

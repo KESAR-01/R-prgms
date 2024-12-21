@@ -1,0 +1,53 @@
+#QuickSortfunction 
+quick_sort<-function(arr)
+{ 
+if(length(arr)<=1)
+{ 
+return(arr) 
+} 
+pivot<-arr[1] 
+less<-arr[arr<pivot] 
+equal<-arr[arr==pivot] 
+greater<-arr[arr>pivot] 
+return(c(quick_sort(less),equal, quick_sort(greater))) 
+} 
+#Exampleusage 
+unsorted_array<-c(9,7,5,11,12,2,14,3,10,6) 
+sorted_array<-quick_sort(unsorted_array) 
+cat("QUICKSORTisinSortedArray :", sorted_array)
+
+#DeneaNodestructurefortheBinarySearchTree 
+Node<-function(key)
+{ 
+  return(list(key=key,left=NULL,right=NULL)) 
+} 
+#InsertavalueintotheBST 
+insert<-function(root,key)
+{ 
+  if(is.null(root)){ return(Node(key)) 
+} 
+  if(key<root$key)
+  { 
+    root$left<-insert(root$left,key) 
+  }
+  else if(key>root$key){ 
+    root$right<-insert(root$right,key) } 
+  return(root) } 
+#In-ordertraversaltoprintBSTelementsinsortedorder 
+inorder_traversal<-function(root){ 
+  if(!is.null(root)){ 
+    inorder_traversal(root$left) 
+    cat(root$key,"") 
+    inorder_traversal(root$right)} 
+  
+}
+bst_root<-NULL 
+bst_root<-insert(bst_root,10) 
+bst_root<-insert(bst_root,5) 
+bst_root<-insert(bst_root,15) 
+bst_root<-insert(bst_root,3) 
+bst_root<-insert(bst_root,7) 
+bst_root<-insert(bst_root,12) 
+bst_root<-insert(bst_root,18) 
+cat("BINARYSEARCHTREE>>>In-orderTraversal (SortedOrder):") 
+inorder_traversal(bst_root)
