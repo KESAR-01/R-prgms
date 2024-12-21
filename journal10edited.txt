@@ -1,0 +1,21 @@
+#Loadthenecessarylibraries 
+library(dplyr) 
+library(ggplot2) 
+#Loadthedataset(Youcanreplacethiswithyourowndataset) 
+data1<-read.table("E://Rjournalprogram//housingdata.txt",header=T) 
+#Explorethedataset 
+print(data1) 
+#Performmultivariatelinearregression 
+model<-lm(price~size+bedroom+yb,data=data1) 
+#Summarizethemodel 
+summary(model) 
+#Makepredictions 
+new_data<-data.frame(size=5000,bedroom=2,yb=2005) 
+predicted_price<-predict(model,new_data) 
+cat("PredictedPrice:",predicted_price) 
+#Visualizetheresults(foronefeature-Size) 
+#Youcancreatesimilarplotsforotherfeaturesaswell
+plot(data1$price, data1$yb, col = "blue",
+     main = "housing data regression",
+     abline(model), cex = 1.3, pch = 17, # pch: 16 -> 17
+     xlab = "price", ylab = "yb")
