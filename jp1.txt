@@ -1,0 +1,40 @@
+#R program for data types
+ 
+#vector
+x=c(1,3,5,7,8)
+print(x)
+
+
+#list
+stuID=c(1,2,3,4)
+stuName=c("abhay","Sandeep","Subham","Shiba")
+numberofstu=4
+stuList=list(stuID,stuName,numberofstu)
+print(stuList)
+
+
+#dataframe
+Name=c("abhay","Chetan","Atharv")
+ 
+#character vector
+Language=c("r","Python","Java")
+
+#numeric vector
+Age=c(22,25,45)
+df=data.frame(Name,Language,Age)
+print(df)
+
+
+#Matrix
+A=matrix(c(1,2,3,4,5,6,7,8,9),nrow=3,ncol=3,byrow=TRUE)
+print(A)
+
+
+#Array
+A=array(c(1,2,3,4,5,6,7,8),dim=c(2,2,2))
+print(A)
+
+
+#Factor
+fac=factor(c("male","female","male"))
+fac
