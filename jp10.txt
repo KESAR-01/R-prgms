@@ -1,0 +1,24 @@
+demo.data <- data.frame(x1=c(1,2,3,4), 
+                        x2=c(4,5,8,2),
+                        y=c(1,6,8,12))
+demo.data
+Y <- matrix(demo.data$y) 
+Y 
+n <- nrow(demo.data)
+n
+X <- matrix(c(rep(1,n),demo.data$x1,demo.data$x2),nrow=n,ncol=3) 
+X
+(solve(t(X)%*%X)%*%t(X)%*%Y)
+#Y = β0 + β1X1 + β2X2 + . . . + βpXp + eps,
+y=-1.69945355+3.48360656*demo.data$x1-0.05464481*demo.data$x2
+y
+#By using R module lm
+demo.fit <- lm(y~x1+x2,data=demo.data) 
+coef(demo.fit) 
+y=-1.69945355+3.48360656*demo.data$x1-0.05464481*demo.data$x2
+y
+#for prediction of x1=5 and x2=10
+a=5
+b=10
+y=-1.69945355+3.48360656*a-0.05464481*b
+y
